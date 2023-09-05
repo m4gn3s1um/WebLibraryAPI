@@ -37,3 +37,4 @@ C:\Users\lokaladministrator\Documents\GitHub\WebLibraryAPI\Presentation\bin\Debu
 C:\Users\lokaladministrator\Documents\GitHub\WebLibraryAPI\Presentation\bin\Debug\net8.0\Models.pdb
 C:\Users\lokaladministrator\Documents\GitHub\WebLibraryAPI\Presentation\bin\Debug\net8.0\Data.dll
 C:\Users\lokaladministrator\Documents\GitHub\WebLibraryAPI\Presentation\bin\Debug\net8.0\Data.pdb
+C:\Users\lokaladministrator\Documents\GitHub\WebLibraryAPI\Presentation\obj\Debug\net8.0\Presentation.sourcelink.json

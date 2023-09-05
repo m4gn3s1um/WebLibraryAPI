@@ -1,13 +1,15 @@
-﻿namespace Presentation;
+﻿namespace Models;
 
 public class Book
 {
-    public int Id { get; private set; }
-    public string Name { get; private set; }
+    public Guid Id { get; private set; }
+    public string Name { get; set; }
+    public bool Available { get; set; }
 
-    public Book(int id, string name)
+    public Book(string name, bool available = true)
     {
-        Id = id;
+        Id = Guid.NewGuid();
         Name = name;
+        Available = available;
     }
 }
