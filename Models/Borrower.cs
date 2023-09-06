@@ -2,13 +2,7 @@
 
 public class Borrower
 {
-    public Guid Id { get; }
+    public Guid Id { get; set; }
     public string Name { get; set; }
-    public IList<Book> BorrowedBooks { get; } = new List<Book>();
-
-    public Borrower(string name)
-    {
-        Id = Guid.NewGuid();
-        Name = name;
-    }
+    public IList<Book> BorrowedBooks { get; set; } = new List<Book>();
 }

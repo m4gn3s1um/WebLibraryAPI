@@ -1,6 +1,8 @@
 
 using Business.Service;
+using Data;
 using Data.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace Presentation;
 
@@ -12,6 +14,8 @@ public class Program
 
         // Add services to the container.
 
+        builder.Services.AddDbContext<LibraryContext>(opts => 
+            opts.UseSqlite("Data Source=MyLibrary.db"));
         builder.Services.AddAutoMapper(typeof(Program));
         
         // Services
@@ -19,8 +23,8 @@ public class Program
         builder.Services.AddScoped<IBorrowerService, BorrowerService>();
         
         //Repositories
-        builder.Services.AddSingleton<IBookRepository, BookRepository>();
-        builder.Services.AddSingleton<IBorrowerRepository, BorrowerRepository>();
+        builder.Services.AddScoped<IBookRepository, BookRepository>();
+        builder.Services.AddScoped<IBorrowerRepository, BorrowerRepository>();
         
         builder.Services.AddControllers();
         
@@ -47,3 +51,5 @@ public class Program
         app.Run();
     }
 }
+
+

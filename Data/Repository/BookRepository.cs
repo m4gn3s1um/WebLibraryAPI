@@ -4,26 +4,26 @@ namespace Data.Repository;
 
 public class BookRepository : IBookRepository
 {
-    private List<Book> books = new List<Book>
+    private readonly LibraryContext _context;
+
+    public BookRepository(LibraryContext context)
     {
-        new Book("Moby dick"),
-        new Book("The Hobbit"),
-        new Book("Sleeping giants", false)
-    };
+        _context = context;
+    }
 
     public IList<Book> GetBooks()
     {
-        return books;
+        return _context.Books.ToList();
     }
 
     public Book GetBook(Guid id)
     {
-        return books.FirstOrDefault(x => x.Id == id) ?? throw new InvalidOperationException();
+        return _context.Books.Find(id);
     }
 
     public bool BookExists(Guid id)
     {
-        return books.Any(x => x.Id == id);
+        return _context.Books.Any(x => x.Id == id);
     }
 
     public Book UpdateBook(Guid id, Book book)
@@ -31,22 +31,25 @@ public class BookRepository : IBookRepository
         var bookToUpdate = GetBook(id);
         bookToUpdate.Name = book.Name;
         bookToUpdate.Available = book.Available;
+        _context.SaveChanges();
         return bookToUpdate;
     }
 
     public void DeleteBook(Guid id)
     {
-        books.Remove(GetBook(id));
+        _context.Books.Remove(GetBook(id));
+        _context.SaveChanges();
     }
 
     public Book CreateBook(Book book)
     {
-        books.Add(book);
+        _context.Books.Add(book);
+        _context.SaveChanges();
         return book;
     }
 
     public IList<Book> GetAvailableBooks()
     {
-        return books.Where(x => x.Available).ToList();
+        return _context.Books.Where(x => x.Available).ToList();
     }
 }

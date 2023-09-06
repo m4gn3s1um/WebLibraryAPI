@@ -7,9 +7,6 @@ public class FakeBookRepository : IBookRepository
 {
     private List<Book> books = new List<Book>
     {
-        new Book("Moby dick"),
-        new Book("The Hobbit"),
-        new Book("Sleeping giants")
     };
     
     public IList<Book> GetBooks()

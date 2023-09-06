@@ -6,8 +6,6 @@ public class BorrowerRepository : IBorrowerRepository
 {
     private List<Borrower> borrowers = new List<Borrower>
     {
-        new Borrower("Thomas Jensen"),
-        new Borrower("Søren Hansen"),
     };
 
     public IList<Borrower> GetBorrowers()
