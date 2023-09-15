@@ -15,7 +15,7 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddDbContext<LibraryContext>(opts => 
-            opts.UseSqlite("Data Source=MyLibrary.db"));
+            opts.UseSqlite("Data Source=./MyLibrary.db"));
         builder.Services.AddAutoMapper(typeof(Program));
         
         // Services
@@ -41,7 +41,8 @@ public class Program
             app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
+        app.UseRouting();
+        //app.UseHttpsRedirection();
 
         app.UseAuthorization();
 
