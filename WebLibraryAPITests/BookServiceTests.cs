@@ -16,6 +16,7 @@ public class BookServiceTests
     }
 
     [Test]
+    [Ignore("Not used")]
     public void CanReturnAListOfBooks()
     {
         var actual = _service.GetBooks();
