@@ -8,7 +8,7 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
   solution: '**/WebLibraryAPI.sln'
-  project: '**/Presentation.Presentation.csproj'
+  project: '**/Presentation/Presentation.csproj'
  
 steps:
 - task: NuGetToolInstaller@1
