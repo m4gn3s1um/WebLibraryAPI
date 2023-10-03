@@ -34,5 +34,5 @@ steps:
     azureSubscription: 'Azure subscription 1 (b19e7d32-5d70-4421-87a0-3294258cd94f)'
     appType: 'webApp'
     appName: 'WebAppName12345'
-    package: '$(System.DefaultWorkingDirectory)/**/*.*'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
     deploymentMethod: 'auto'
