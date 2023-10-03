@@ -27,11 +27,17 @@ steps:
   name: 'Publish'
   displayName: 'Publish'
   inputs:
-    command: 'publish'
-    publishWebProjects: false
+    command: 'build'
     projects: '$(project)'
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: false
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.BinariesDirectory)'
+ 
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
  
 - task: PublishBuildArtifacts@1
   name: 'PublishBuildArtifacts'
