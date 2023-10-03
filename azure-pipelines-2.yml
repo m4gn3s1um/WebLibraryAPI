@@ -10,6 +10,7 @@ pool:
   vmImage: 'windows-latest'
 
 variables:
+
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
@@ -28,7 +29,10 @@ steps:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: VSTest@2
+- task: AzureWebApp@1
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    azureSubscription: 'Azure subscription 1 (b19e7d32-5d70-4421-87a0-3294258cd94f)'
+    appType: 'webApp'
+    appName: 'WebAppName12345'
+    package: '$(System.DefaultWorkingDirectory)/**/*.*'
+    deploymentMethod: 'auto'
