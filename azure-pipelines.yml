@@ -35,3 +35,11 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Azure for Students(3eb335a5-5738-404c-85c8-082168038efa)'
+    appType: 'webApp'
+    WebAppName: 'magnuswebapi'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
