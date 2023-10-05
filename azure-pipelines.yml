@@ -30,11 +30,3 @@ steps:
     command: 'build'
     projects: '$(project)'
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
- 
-- task: PublishBuildArtifacts@1
-  name: 'PublishBuildArtifacts'
-  displayName: 'Publish build artifacts'
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'AzureTestProject'
-    publishLocation: 'Container'
