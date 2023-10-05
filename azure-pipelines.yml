@@ -42,4 +42,4 @@ steps:
     azureSubscription: 'Azure for Students(3eb335a5-5738-404c-85c8-082168038efa)'
     appType: 'webApp'
     WebAppName: 'magnuswebapi'
-    packageForLinux: '$(Build.ArtifactStagingDirectory).zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
