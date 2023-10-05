@@ -51,7 +51,7 @@ steps:
     pipeline: '3'
     buildVersionToDownload: 'latest'
     downloadType: 'single'
-    artifactName: 'WebApp'
+    artifactName: 'webApp'
     downloadPath: '$(System.ArtifactsDirectory)'
 
 - task: AzureRmWebAppDeployment@4
