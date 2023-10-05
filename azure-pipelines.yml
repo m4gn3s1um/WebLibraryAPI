@@ -32,7 +32,7 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1 (b19e7d32-5d70-4421-87a0-3294258cd94f)'
+    azureSubscription: 'Azure for Students(3eb335a5-5738-404c-85c8-082168038efa)'
     appType: 'webApp'
     WebAppName: 'magnuswebapi'
     packageForLinux: '$(build.artifactStagingDirectory)\WebApp.zip'
