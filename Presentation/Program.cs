@@ -16,8 +16,10 @@ public class Program
         // Add services to the container.
 
         builder.Services.AddDbContext<LibraryContext>(opts => 
-            opts.UseSqlite("Data Source=./MyLibrary.db"));
+            opts.UseSqlServer("Server=EASV-DB4.easv.dk;Database=MagnusLibraryAPI;User Id=CSe2022t_t_6;Password=CSe2022tT6#;TrustServerCertificate=True;"));
         builder.Services.AddAutoMapper(typeof(Program));
+        builder.Services.AddLogging();
+        builder.Services.AddCors();
         
         // Services
         builder.Services.AddScoped<IBookService, BookService>();
@@ -41,6 +43,11 @@ public class Program
             app.UseSwaggerUI();
         }
 
+        app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+        
         app.UseRouting();
         //app.UseHttpsRedirection();
 

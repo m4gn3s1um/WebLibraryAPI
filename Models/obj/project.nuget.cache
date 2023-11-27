@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bJwC7QX1iY40fOzPhoTg6ciwAUNHFR1t6UK1SZ+8EyGdi83vuOtTtxIHDHUK6U9vmBHXdRqoFwXcom0HuGLfWg==",
+  "dgSpecHash": "BmCo0sVjUdLMDg/UBNAy48FxqMDtAiWZxcFr34UJHOT2pMoQE5fCCZu/TngVj8KWy7r4hTUo+ThLrGZ0B1AIdg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lokaladministrator\\Documents\\GitHub\\WebLibraryAPI\\Models\\Models.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\MadMe\\RiderProjects\\WebLibraryAPIMagnus\\Models\\Models.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MadMe\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.9\\microsoft.netcore.app.ref.7.0.9.nupkg.sha512",
+    "C:\\Users\\MadMe\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.9\\microsoft.windowsdesktop.app.ref.7.0.9.nupkg.sha512",
+    "C:\\Users\\MadMe\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.9\\microsoft.aspnetcore.app.ref.7.0.9.nupkg.sha512"
+  ],
   "logs": []
 }
